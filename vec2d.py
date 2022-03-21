@@ -35,6 +35,3 @@ class Vec2d:
     def normalize(self):
        return Vec2d(self.a / self.len(), self.b / self.len())
 
-
-a = Vec2d(3, 7)
-print(a.rot(100))
