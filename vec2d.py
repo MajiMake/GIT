@@ -26,9 +26,10 @@ class Vec2d:
     def dot(self, other):
         return self.a * other.a + self.b * other.b
 
-    def rot(self, degrees):
-        deg = math.radians(degrees)
-        return Vec2d(self.a + deg, self.b - deg)
+    def rot(self, angle):
+        x = self.a * math.cos(angle) - self.b * math.sin(angle)
+        y = self.b * math.cos(angle) - self.a * math.sin(angle)
+        return Vec2d(x, y)
         pass
 
     def normalize(self):
