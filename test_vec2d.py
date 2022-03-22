@@ -18,13 +18,17 @@ def test_sub():
     assert c.a == -1
     assert c.b == 2
 
+
 def test_rot():
     a = Vec2d(3, 7)
-    c = a.rot(100)
+    c = a.rot(10)
 
-    assert round(c.a, 2) == -7.33
-    assert round(c.b, 2) == 6.55
+    assert round(c.a, 2) == 2.98
+    assert round(c.b, 2) == 3.02
 
 def test_normalize():
 
+
     pass
+
+

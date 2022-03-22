@@ -27,11 +27,11 @@ class Vec2d:
         return self.a * other.a + self.b * other.b
 
     def rot(self, angle):
-        x = self.a * math.cos(angle) - self.b * math.sin(angle)
-        y = self.b * math.cos(angle) - self.a * math.sin(angle)
-        return Vec2d(x, y)
+        rad_angle = math.radians(angle)
+        x = self.a * math.cos(rad_angle) - self.b * math.sin(rad_angle)
+        y = self.a * math.cos(rad_angle) + self.b * math.sin(rad_angle)
+        return Vec2d(round(x, 2), round(y, 2))
         pass
 
     def normalize(self):
        return Vec2d(self.a / self.len(), self.b / self.len())
-
