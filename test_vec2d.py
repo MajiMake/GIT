@@ -27,8 +27,11 @@ def test_rot():
     assert round(c.b, 2) == 4.17
 
 def test_normalize():
+    a = Vec2d(3, 7)
+    c = a.normalize()
 
-
-    pass
+    assert round(c.a, 2) == 0.39
+    assert round(c.b, 2) == 0.92
+    assert round(c.len()) == 1
 
 
