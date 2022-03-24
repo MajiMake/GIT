@@ -30,8 +30,7 @@ class Vec2d:
         rad_angle = math.radians(angle)
         x = self.a * math.cos(rad_angle) - self.b * math.sin(rad_angle)
         y = self.a * math.cos(rad_angle) + self.b * math.sin(rad_angle)
-        return Vec2d(x, 2),(y, 2)
-        pass
+        return Vec2d(x, y)
 
     def normalize(self):
        return Vec2d(self.a / self.len(), self.b / self.len())
