@@ -1,23 +1,24 @@
-a = [
-     [None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None],
-     [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,None,None,None,None, None],
-     [None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None],
-     [None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None],
-     [None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None],
-     [None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None],
-     [None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None],
-     [None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None],
-     [None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None],
-     [None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None],
-]
+
+def draw(massive,y):
+     for q in range(y):
+
+          for g in massive[q]:
+               print(g[0], end='')
 
 
-def draw(terminal,c1, c2, symbol):
-     terminal[c1][c2] = symbol
-     for a in terminal:
-          print(a)
+
+def creator(x,y):
+     massive = []
+     for _ in range(y):
+          massive.append([' ' for _ in range(x)])
+     return massive
 
 
-draw(a, 0,4, '2')
+def coordination(symbol, x,y,x1,y1):
+     massive = creator(x1,y1)
+     massive[y][x] = symbol
+     draw(massive,y1)
 
-print(len(a[0]))
+coordination('s',10,45,100,100)
+
+
