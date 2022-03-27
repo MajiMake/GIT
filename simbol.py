@@ -15,7 +15,7 @@ def draw(massive, y, x, ):
 def creator(x, y):
     massive = []
     for _ in range(y):
-        massive.append(['x' for _ in range(x)])
+        massive.append([' ' for _ in range(x)])
     return massive
 
 
@@ -25,4 +25,4 @@ def coordination(symbol, x, y, x1, y1):
     draw(massive, y1, x1)
 
 
-coordination('s', 3, 5, 10, 10)
+coordination('s', 22, 17, 100, 100)
