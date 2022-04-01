@@ -1,28 +1,34 @@
-def draw(massive, y, x, ):
-    dam = 0
-    for q in range(y):
+class Canvas:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+        self.massive = []
+        self.local_massive = self.massive_creator()
+        self.count = 0
 
-        for g in massive[q]:
-            dam += 1
+    def draw(self):
+        for q in range(self.y):
 
-            if dam == x:
-               dam = 0
-               print(g[0])
-            else:
-                print(g[0], end='')
+            for g in self.local_massive[q]:
+                self.count += 1
+
+                if self.count == self.x:
+                    self.count = 0
+                    print(g[0])
+                else:
+                    print(g[0], end='')
+
+    def massive_creator(self):
+        for _ in range(self.y):
+            self.massive.append([' ' for _ in range(self.x)])
+        return self.massive
+
+    def put_pixel(self, x_coordinate, y_coordinate,symbol):
+        self.local_massive[y_coordinate][x_coordinate] = symbol
+        self.draw()
 
 
-def creator(x, y):
-    massive = []
-    for _ in range(y):
-        massive.append([' ' for _ in range(x)])
-    return massive
+Reate = Canvas(12,12)
+Reate.put_pixel(5,5,'ж')
 
 
-def coordination(symbol, x, y, x1, y1):
-    massive = creator(x1, y1)
-    massive[y][x] = symbol
-    draw(massive, y1, x1)
-
-
-coordination('s', 22, 17, 100, 100)
